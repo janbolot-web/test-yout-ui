@@ -1,0 +1,76 @@
+.personal {
+  overflow: hidden;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 90px;
+    padding-top: 38px;
+    position: relative;
+    @media (max-width: 1025px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+  &__tests {
+    max-width: 490px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    @media (max-width: 1025px) {
+      max-width: 100%;
+      justify-content: center;
+      gap: 5%;
+      row-gap: 40px;
+      margin-top: 50px;
+    }
+  }
+  &__bottom {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(16, 16, 16, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  &__btn {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 12px 32px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  &__dot {
+    position: absolute;
+    opacity: 0.8;
+    z-index: -1;
+  }
+}
+
+.dot-img1 {
+  top: 110px;
+  left: -75px;
+}
+
+.dot-img2 {
+  top: 400px;
+  right: -150px;
+}
+
+.dot-img3 {
+  bottom: -30px;
+  left: calc(50% - 58px);
+}

@@ -16,7 +16,7 @@ body {
   font-family: Urbanist;
   color: #101010;
 }
-@media (max-width: 321px) {
+@media (max-width: 376px) {
   body {
     background-color: red;
   }

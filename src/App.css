@@ -16,8 +16,12 @@ body {
   font-family: Urbanist;
   color: #101010;
 }
-
-.lock{
+@media (max-width: 321px) {
+  body {
+    background-color: red;
+  }
+}
+.lock {
   overflow: hidden;
 }
 

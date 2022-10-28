@@ -15,6 +15,12 @@
     background-color: #fff;
     border-radius: 20px;
     padding: 25px 30px;
+    @media (max-width: 426px) {
+      max-width: 90%;
+    }
+    @media (max-width: 321px) {
+      padding: 25px 10px;
+    }
   }
   &__title {
     font-size: 28px;
@@ -25,6 +31,12 @@
     padding-bottom: 18px;
     margin-bottom: 28px;
     border-bottom: 1px solid #f1f1f1;
+    @media (max-width: 426px) {
+      font-size: 22px;
+    }
+    @media (max-width: 376px) {
+      font-size: 18px;
+    }
   }
   &__btn {
     font-size: 18px;
@@ -36,6 +48,15 @@
     padding: 12px 30%;
     width: 100%;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 426px) {
+      padding: 12px 40px;
+    }
+    @media (max-width: 321px) {
+      padding: 12px 10px;
+    }
     img {
       width: 38px;
       height: 10px;

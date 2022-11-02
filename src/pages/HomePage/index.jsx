@@ -8,7 +8,6 @@ import './HomePage.scss'
 const Homepage = () => {
     return (
         <div className='home'>
-            <Alert />
             <div className="container home__container">
                 <div className="home__content">
                     <div className="home__notification">

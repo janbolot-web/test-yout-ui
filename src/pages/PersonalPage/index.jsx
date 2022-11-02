@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CSSTransition } from "react-transition-group";
+
 import Comparison from '../../components/Comparison'
 import NewTest from '../../components/NewTest'
 import OpenImg from '../../components/OpenImg'
@@ -14,8 +16,13 @@ const PersonalPage = () => {
 
     return (
         <div className='personal'>
-            {openImg && <OpenImg setOpenImg={setOpenImg} srcImg={srcImg} />}
-            {openCreateModal && <Upload setOpenCreateModal={setOpenCreateModal} />}
+            <CSSTransition in={openImg} classNames="img-modal" timeout={300} unmountOnExit>
+                <OpenImg setOpenImg={setOpenImg} srcImg={srcImg} />
+            </CSSTransition>
+
+            <CSSTransition in={openCreateModal} classNames="upload-modal" timeout={500} unmountOnExit>
+                <Upload setOpenCreateModal={setOpenCreateModal} />
+            </CSSTransition>
             {/* <Upload / */}
             <div className="container personal__container">
                 <div className="personal__top">

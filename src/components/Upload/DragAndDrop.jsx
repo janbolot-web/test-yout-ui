@@ -7,7 +7,8 @@ const DragAndDrop = ({ }) => {
     const [files, setFiles] = useState();
     const { getRootProps, getInputProps } = useDropzone({
         accept: {
-            "image/*": [],
+            "image/png": ['.png'],
+            "image/jpeg": ['.jpeg'],
         },
         onDrop: (acceptedFiles) => {
             setFiles(

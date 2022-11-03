@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { CSSTransition } from "react-transition-group";
 import Alert from '../Alert'
 import Upload from '../Upload';
@@ -10,7 +10,6 @@ const Header = () => {
   const [authMessage, setAuthMessage] = useState(false)
   const [showLogout, setShowLogout] = useState(false)
   const [openCreateModal, setOpenCreateModal] = useState(false)
-
 
   function authLogout() {
     setAuth(false)
@@ -24,9 +23,6 @@ const Header = () => {
 
   return (
     <div className='header'>
-      {/* {auth && authMessage && */}
-      {/* <Alert setAuthMessage={setAuthMessage} /> */}
-      {/* } */}
       <CSSTransition in={authMessage} classNames="auth-modal" timeout={500} unmountOnExit>
         <Alert setAuthMessage={setAuthMessage} />
       </CSSTransition>
@@ -47,7 +43,7 @@ const Header = () => {
             }
           </div> :
           <div className="header__btns">
-            <a href='https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=220526430317-99hs54su7n5cek50rilhdaautuk35grr.apps.googleusercontent.com&redirect_uri=https://dev-testservice.westus3.cloudapp.azure.com:5001/login/callback&scope=openid+email+profile' className="header__try btn">Try for free Now</a>
+            <a href='#' className="header__try btn">Try for free Now</a>
             <button className="header__login btn" onClick={authLogin}>Continue with Google</button>
           </div>
         }

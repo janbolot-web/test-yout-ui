@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useDropzone } from "react-dropzone";
 import './Upload.scss'
 import CancelIcon from '../../assets/images/icons/close.svg'
+import { filters } from '../../filterImage';
 
-const DragAndDrop = ({ }) => {
+const DragAndDrop = () => {
     const [files, setFiles] = useState();
+    const [type, setType] = useState();
     const { getRootProps, getInputProps } = useDropzone({
         accept: {
-            "image/png": ['.png'],
-            "image/jpeg": ['.jpeg'],
+            ...filters
         },
         onDrop: (acceptedFiles) => {
             setFiles(

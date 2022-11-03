@@ -7,7 +7,6 @@ function Upload({ setOpenCreateModal }) {
   function closeModal() {
     setOpenCreateModal(false)
   }
-
  
   return (
     <section className="upload">
@@ -24,7 +23,6 @@ function Upload({ setOpenCreateModal }) {
           <DragAndDrop   />
           <DragAndDrop   />
         </div>
-
       </div>
     </section>
   );

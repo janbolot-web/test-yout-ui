@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import OpenImg from '../OpenImg'
 import './Comparison.scss'
 
 const Comparison = ({ setOpenImg, setSrcImg, item }) => {
+    const [loading, setLoading] = useState(false)
+
     function openImgHandler(e) {
         setOpenImg(true)
         setSrcImg(e.target.src)
@@ -23,27 +25,31 @@ const Comparison = ({ setOpenImg, setSrcImg, item }) => {
                         <img onClick={(e) => openImgHandler(e)} src={item.imageB} alt="" />
                     </div>
                 </div>
-                <div className="comparison__bottom">
-                    <div className="comparison__result ">
-                        <img src={require("../../assets/images/icons/dislike.png")} className='comparison__like' alt="" />
-                        <span>{item.percents && item.percents[0]}%</span>
-                    </div>
 
-                    <img className='comparison__arrow' src={require("../../assets/images/icons/arrow-left.png")} alt="" />
-                    <div className="comparison__result">
-                        <img src={require("../../assets/images/icons/like.png")} className='comparison__dislike' alt="" />
-                        <span>{item.percents && item.percents[1]}%</span>
+                {
+                    !loading ? <>
+                        <div className="comparison__bottom">
+                            <div className="comparison__result ">
+                                <img src={require("../../assets/images/icons/dislike.png")} className='comparison__like' alt="" />
+                                <span>{item.percents && item.percents[0]}%</span>
+                            </div>
+
+                            <img className='comparison__arrow' src={require("../../assets/images/icons/arrow-left.png")} alt="" />
+                            <div className="comparison__result">
+                                <img src={require("../../assets/images/icons/like.png")} className='comparison__dislike' alt="" />
+                                <span>{item.percents && item.percents[1]}%</span>
+                            </div>
+                        </div>
+                        <div className="comparison__bottom-text">
+                            <span>Experiment result: </span>
+                            Option 2 is significantly better
+                        </div></> : <div className="comparison__progress">
+                        <img src={require('../../assets/images/icons/progress.png')} alt="" />
+                        <span>Voting in progress 60%</span>
+                        <p>less than 5 min left</p>
                     </div>
-                </div>
-                <div className="comparison__bottom-text">
-                    <span>Experiment result: </span>
-                    Option 2 is significantly better
-                </div>
-                {/* <div className="comparison__progress">
-                    <img src={require('../../assets/images/icons/progress.png')} alt="" />
-                    <span>Voting in progress 60%</span>
-                    <p>less than 5 min left</p>
-                </div> */}
+                }
+
             </div>
         </div >
     )

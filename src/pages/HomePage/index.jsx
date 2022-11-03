@@ -1,8 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Alert from '../../components/Alert'
-import Comparison from '../../components/Comparison'
-import Header from '../../components/Header'
 import About from './About'
 import './HomePage.scss'
 
@@ -42,7 +39,6 @@ const Homepage = () => {
                 </div>
             </div>
             <About />
-
         </div>
     )
 }

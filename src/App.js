@@ -1,7 +1,5 @@
 import {
   createBrowserRouter,
-  Route,
-  Routes,
   useLocation,
   useOutlet,
 } from "react-router-dom";
@@ -59,11 +57,6 @@ function App() {
           </CSSTransition>
         </SwitchTransition>
       </div>
-      {/* <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/personal" element={<PersonalPage />} />
-        <Route path="/test" element={<Test />} />
-      </Routes> */}
     </div>
   );
 }

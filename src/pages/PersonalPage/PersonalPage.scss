@@ -52,6 +52,13 @@
     padding: 12px 32px;
     border-radius: 8px;
     cursor: pointer;
+    transition: .2s all;
+    &:hover{
+       box-shadow: 0px 4px 10px  rgba(71, 128, 242, 0.718);
+      background: rgba(71, 129, 242, 1);
+      border-color: rgba(71, 129, 242, 1);
+      color: #fff;
+    }
   }
   &__dot {
     position: absolute;

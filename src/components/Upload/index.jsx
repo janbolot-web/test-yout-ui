@@ -5,6 +5,7 @@ const Upload = ({ setOpenCreateModal }) => {
   const [drag, setDrag] = useState(false)
   const [dragSecond, setDragSecond] = useState(false)
   const [file, setFile] = useState([])
+  const [fileSecond, setFileSecond] = useState([])
 
   const dragStartHandler = (e) => {
     e.preventDefault()
@@ -25,16 +26,22 @@ const Upload = ({ setOpenCreateModal }) => {
   const onDropHandler = (e) => {
     e.preventDefault()
     let file = [...e.dataTransfer.files]
-    setFile(file[0])
-    setDrag(false)
-    console.log([...e.dataTransfer.items]);
+    if ((file[0].type === "image/jpeg" || file[0].type === "image/png") && file[0].size <= 15000000) {
+      setFile(file[0])
+      setDrag(false)
+      console.log(file[0].size);
+    } else {
+      return
+    }
     // const formData = new FormData()
     // formData.append('file', files[0])
     // console.log(formData);
   }
   const onDropHandlerSecond = (e) => {
     e.preventDefault()
-    let files = [...e.dataTransfer.files]
+    let file = [...e.dataTransfer.files]
+    setFileSecond(file[0])
+    console.log([...e.dataTransfer.items]);
     setDragSecond(false)
   }
 
@@ -71,7 +78,7 @@ const Upload = ({ setOpenCreateModal }) => {
               >Upload image</div>
 
             }
-            <span>{file && file.name}</span>
+            <p className="clip">{file && file.name}</p>
           </div>
           <div className="upload__img-item">
             {dragSecond ?
@@ -88,7 +95,7 @@ const Upload = ({ setOpenCreateModal }) => {
                 onDragOver={e => dragStartHandlerSecond(e)}
               >Upload image</div>
             }
-            <span>1234image.png</span>
+            <p className="clip">{fileSecond && fileSecond.name}</p>
           </div>
         </div>
       </div>

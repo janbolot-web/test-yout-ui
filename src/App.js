@@ -9,7 +9,6 @@ import "./App.css";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import PersonalPage from "./pages/PersonalPage";
-import Test from "./pages/Test";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { createRef } from "react";
 

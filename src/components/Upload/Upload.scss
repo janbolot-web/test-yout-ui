@@ -85,29 +85,37 @@
     text-align: center;
     padding: 12px 19px;
     border-radius: 8px;
+    transition: 0.3s all;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 4px 10px rgba(71, 128, 242, 0.718);
+      background: rgba(71, 129, 242, 1);
+      border-color: rgba(71, 129, 242, 1);
+      color: #fff;
+    }
   }
   &__img-list {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
     margin-top: 16px;
+    gap: 40px;
     @media (max-width: 769px) {
       margin-top: 50px;
     }
     @media (max-width: 426px) {
-      gap: 20px;
+      gap: 10px;
     }
   }
   &__img-item {
-    width: 50%;
+    width: 49%;
     height: 500px;
-    span {
+    p {
       font-size: 18px;
       font-weight: 500;
       letter-spacing: 0.01em;
       display: flex;
-      justify-content: center;
       margin-top: 13px;
+
       @media (max-width: 426px) {
         font-size: 16px;
       }
@@ -156,4 +164,12 @@
 .drop-hover {
   border-color: rgb(13, 65, 169);
   background: rgba(71, 128, 242, 0.049);
+}
+
+p.clip {
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

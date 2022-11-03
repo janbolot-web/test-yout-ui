@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Alert from '../../components/Alert'
 import Comparison from '../../components/Comparison'
 import Header from '../../components/Header'
@@ -18,7 +19,7 @@ const Homepage = () => {
                     <div className="bg-dot-img"></div>
                     <div className="bg-main-img"></div>
                     <p className="home__desc">Test your designs on real people: fast and cheap</p>
-                    <button className="home__btn btn">Try for free Now</button>
+                    <Link to='/personal' className="home__btn btn">Try for free Now</Link>
                 </div>
                 <div className='home__right'>
                     <div className="home__right-container">
